@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import Step1 from './tutorial/step-1/Step1.vue'
-import Step2 from './tutorial/step-2/Step2.vue'
-import Step3 from './tutorial/step-3/Step3.vue'
-import Step4 from './tutorial/step-4/Step4.vue'
-import Step5 from './tutorial/step-5/Step5.vue'
-import Step6 from './tutorial/step-6/Step6.vue'
-import Step7 from './tutorial/step-7/Step7.vue'
+import TutorialStep1 from './tutorial/step-1/TutorialStep1.vue'
+import TutorialStep2 from './tutorial/step-2/TutorialStep2.vue'
+import TutorialStep3 from './tutorial/step-3/TutorialStep3.vue'
+import TutorialStep4 from './tutorial/step-4/TutorialStep4.vue'
+import TutorialStep5 from './tutorial/step-5/TutorialStep5.vue'
+import TutorialStep6 from './tutorial/step-6/TutorialStep6.vue'
+import TutorialStep7 from './tutorial/step-7/TutorialStep7.vue'
+import TutorialStep8 from './tutorial/step-8/TutorialStep8.vue'
+import TutorialStep9 from './tutorial/step-9/TutorialStep9.vue'
 </script>
 
 <template>
   <div>
     <h2>step-1</h2>
     <label>はじめに</label>
-    <Step1 />
+    <TutorialStep1 />
   </div>
 
   <hr />
@@ -20,7 +22,7 @@ import Step7 from './tutorial/step-7/Step7.vue'
   <div>
     <h2>step-2</h2>
     <label>宣言的レンダリング</label>
-    <Step2 />
+    <TutorialStep2 />
   </div>
 
   <hr />
@@ -28,7 +30,7 @@ import Step7 from './tutorial/step-7/Step7.vue'
   <div>
     <h2>step-3</h2>
     <label>属性バインディング</label>
-    <Step3 />
+    <TutorialStep3 />
   </div>
 
   <hr />
@@ -36,7 +38,7 @@ import Step7 from './tutorial/step-7/Step7.vue'
   <div>
     <h2>step-4</h2>
     <label>イベントリスナー</label>
-    <Step4 />
+    <TutorialStep4 />
   </div>
 
   <hr />
@@ -44,7 +46,7 @@ import Step7 from './tutorial/step-7/Step7.vue'
   <div>
     <h2>step-5</h2>
     <label>フォームバインディング</label>
-    <Step5 />
+    <TutorialStep5 />
   </div>
 
   <hr />
@@ -52,15 +54,31 @@ import Step7 from './tutorial/step-7/Step7.vue'
   <div>
     <h2>step-6</h2>
     <label>条件付きレンダリング</label>
-    <Step6 />
+    <TutorialStep6 />
   </div>
 
   <hr />
 
   <div>
     <h2>step-7</h2>
-    <label>リストレンダリング </label>
-    <Step7 />
+    <label>リストレンダリング</label>
+    <TutorialStep7 />
+  </div>
+
+  <hr />
+
+  <div>
+    <h2>step-8</h2>
+    <label>算出プロパティ</label>
+    <TutorialStep8 />
+  </div>
+
+  <hr />
+
+  <div>
+    <h2>step-9</h2>
+    <label>ライフサイクルとテンプレート参照</label>
+    <TutorialStep9 />
   </div>
 </template>
 
