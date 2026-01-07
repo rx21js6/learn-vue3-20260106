@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import EventHandlingExample from '@/guide/event-handling/EventHandlingExample.vue'
+import FormBindingExample from '@/guide/form-binding/FormBindingExample.vue'
 import ReactivityExample from '@/guide/reactivity/ReactivityExample.vue'
 import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample.vue'
 </script>
@@ -25,5 +26,11 @@ import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample
   <div>
     <h2>イベントハンドリング</h2>
     <EventHandlingExample />
+  </div>
+
+  <hr />
+  <div>
+    <h2>フォーム入力バインディング</h2>
+    <FormBindingExample />
   </div>
 </template>
