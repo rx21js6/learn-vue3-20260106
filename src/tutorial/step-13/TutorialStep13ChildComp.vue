@@ -2,8 +2,8 @@
 const emit = defineEmits(['response', 'response2'])
 
 const sendData = {
-    id: 1,
-    name: 'Vue3',
+  id: 1,
+  name: 'Vue3',
 }
 
 emit('response', 'Hello from child')

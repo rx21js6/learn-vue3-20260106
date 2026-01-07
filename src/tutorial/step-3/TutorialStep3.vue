@@ -8,7 +8,7 @@ const titleClass = ref('title')
   <h1 :class="titleClass">Make me red</h1>
 </template>
 
-<style>
+<style scoped>
 .title {
   color: red;
 }
