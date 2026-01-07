@@ -1,11 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted, ref } from 'vue'
 
-const pElementRef = ref(null)
+const pElementRef = ref<HTMLParagraphElement | null>(null)
 
 onMounted(() => {
-  console.log(pElementRef.value.textContent)
-  pElementRef.value.textContent = 'Hello, Vue 3!'
+  console.log(pElementRef.value?.textContent)
+  if (pElementRef.value) {
+    pElementRef.value.textContent = 'Hello, Vue 3!'
+  }
 })
 </script>
 

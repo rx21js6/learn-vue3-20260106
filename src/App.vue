@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TutorialStep1 from './tutorial/step-1/TutorialStep1.vue'
+import TutorialStep10 from './tutorial/step-10/TutorialStep10.vue'
 import TutorialStep2 from './tutorial/step-2/TutorialStep2.vue'
 import TutorialStep3 from './tutorial/step-3/TutorialStep3.vue'
 import TutorialStep4 from './tutorial/step-4/TutorialStep4.vue'
@@ -79,6 +80,14 @@ import TutorialStep9 from './tutorial/step-9/TutorialStep9.vue'
     <h2>step-9</h2>
     <label>ライフサイクルとテンプレート参照</label>
     <TutorialStep9 />
+  </div>
+
+  <hr />
+
+  <div>
+    <h2>step-10</h2>
+    <label>ウォッチャー</label>
+    <TutorialStep10 />
   </div>
 </template>
 

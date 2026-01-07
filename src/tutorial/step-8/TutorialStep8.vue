@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 
 let id = 0
@@ -20,7 +20,7 @@ function addTodo() {
   newTodo.value = ''
 }
 
-function removeTodo(todo) {
+function removeTodo(todo: { id: number; text: string; done: boolean }) {
   todos.value = todos.value.filter((t) => t !== todo)
 }
 </script>
