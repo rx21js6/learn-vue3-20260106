@@ -2,6 +2,7 @@
 import ConditionalRenderingExample from '@/guide/conditiona-rendering/ConditionalRenderingExample.vue'
 import EventHandlingExample from '@/guide/event-handling/EventHandlingExample.vue'
 import FormBindingExample from '@/guide/form-binding/FormBindingExample.vue'
+import ListRenderingExample from '@/guide/list-rendering/ListRenderingExample.vue'
 import ReactivityExample from '@/guide/reactivity/ReactivityExample.vue'
 import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample.vue'
 </script>
@@ -37,5 +38,10 @@ import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample
   <div>
     <h2>条件付きレンダリング</h2>
     <ConditionalRenderingExample />
+  </div>
+  <hr />
+  <div>
+    <h2>リストレンダリング</h2>
+    <ListRenderingExample />
   </div>
 </template>
