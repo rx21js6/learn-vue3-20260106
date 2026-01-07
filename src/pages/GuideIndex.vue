@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import EventHandlingExample from '@/guide/event-handling/EventHandlingExample.vue'
 import ReactivityExample from '@/guide/reactivity/ReactivityExample.vue'
 import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample.vue'
 </script>
@@ -19,5 +20,10 @@ import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample
   <div>
     <h2>テンプレート構文</h2>
     <TemplateSyntaxExample />
+  </div>
+  <hr />
+  <div>
+    <h2>イベントハンドリング</h2>
+    <EventHandlingExample />
   </div>
 </template>
