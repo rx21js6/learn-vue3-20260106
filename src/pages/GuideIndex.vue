@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ConditionalRenderingExample from '@/guide/conditiona-rendering/ConditionalRenderingExample.vue'
 import EventHandlingExample from '@/guide/event-handling/EventHandlingExample.vue'
 import FormBindingExample from '@/guide/form-binding/FormBindingExample.vue'
 import ReactivityExample from '@/guide/reactivity/ReactivityExample.vue'
@@ -27,10 +28,14 @@ import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample
     <h2>イベントハンドリング</h2>
     <EventHandlingExample />
   </div>
-
   <hr />
   <div>
     <h2>フォーム入力バインディング</h2>
     <FormBindingExample />
+  </div>
+  <hr />
+  <div>
+    <h2>条件付きレンダリング</h2>
+    <ConditionalRenderingExample />
   </div>
 </template>
