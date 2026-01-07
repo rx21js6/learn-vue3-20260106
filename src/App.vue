@@ -2,6 +2,7 @@
 import TutorialStep1 from './tutorial/step-1/TutorialStep1.vue'
 import TutorialStep10 from './tutorial/step-10/TutorialStep10.vue'
 import TutorialStep11 from './tutorial/step-11/TutorialStep11.vue'
+import TutorialStep12 from './tutorial/step-12/TutorialStep12.vue'
 import TutorialStep2 from './tutorial/step-2/TutorialStep2.vue'
 import TutorialStep3 from './tutorial/step-3/TutorialStep3.vue'
 import TutorialStep4 from './tutorial/step-4/TutorialStep4.vue'
@@ -97,6 +98,14 @@ import TutorialStep9 from './tutorial/step-9/TutorialStep9.vue'
     <h2>step-11</h2>
     <label>コンポーネント</label>
     <TutorialStep11 />
+  </div>
+
+  <hr />
+
+  <div>
+    <h2>step-12</h2>
+    <label>props</label>
+    <TutorialStep12 />
   </div>
 </template>
 
