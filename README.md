@@ -27,4 +27,7 @@ $ npm run dev:mock
 
 # http://localhost:5173
 # にアクセスする。
+
+# Vitest実行
+$ npm run test
 ````
