@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import TutorialStep1 from '@/tutorial/step-1/TutorialStep1.vue'
-import TutorialStep10 from '@/tutorial/step-10/TutorialStep10.vue'
-import TutorialStep11 from '@/tutorial/step-11/TutorialStep11.vue'
-import TutorialStep12 from '@/tutorial/step-12/TutorialStep12.vue'
-import TutorialStep2 from '@/tutorial/step-2/TutorialStep2.vue'
-import TutorialStep3 from '@/tutorial/step-3/TutorialStep3.vue'
-import TutorialStep4 from '@/tutorial/step-4/TutorialStep4.vue'
-import TutorialStep5 from '@/tutorial/step-5/TutorialStep5.vue'
-import TutorialStep6 from '@/tutorial/step-6/TutorialStep6.vue'
-import TutorialStep7 from '@/tutorial/step-7/TutorialStep7.vue'
-import TutorialStep8 from '@/tutorial/step-8/TutorialStep8.vue'
-import TutorialStep9 from '@/tutorial/step-9/TutorialStep9.vue'
+import TutorialStep1 from '@/components/tutorial/step-1/TutorialStep1.vue'
+import TutorialStep10 from '@/components/tutorial/step-10/TutorialStep10.vue'
+import TutorialStep11 from '@/components/tutorial/step-11/TutorialStep11.vue'
+import TutorialStep12 from '@/components/tutorial/step-12/TutorialStep12.vue'
+import TutorialStep2 from '@/components/tutorial/step-2/TutorialStep2.vue'
+import TutorialStep3 from '@/components/tutorial/step-3/TutorialStep3.vue'
+import TutorialStep4 from '@/components/tutorial/step-4/TutorialStep4.vue'
+import TutorialStep5 from '@/components/tutorial/step-5/TutorialStep5.vue'
+import TutorialStep6 from '@/components/tutorial/step-6/TutorialStep6.vue'
+import TutorialStep7 from '@/components/tutorial/step-7/TutorialStep7.vue'
+import TutorialStep8 from '@/components/tutorial/step-8/TutorialStep8.vue'
+import TutorialStep9 from '@/components/tutorial/step-9/TutorialStep9.vue'
 </script>
 
 <template>
