@@ -2,5 +2,11 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './router/router'
+import { enableMocking } from './mocks'
 
-createApp(App).use(router).mount('#app')
+async function bootstrap() {
+  await enableMocking()
+  createApp(App).use(router).mount('#app')
+}
+
+bootstrap()
