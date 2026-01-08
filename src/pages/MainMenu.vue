@@ -8,6 +8,9 @@
       <li>
         <RouterLink to="/guide">Go to guide Index</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/goOver">Go to go-over Index</RouterLink>
+      </li>
     </ul>
   </div>
 </template>
