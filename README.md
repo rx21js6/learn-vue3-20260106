@@ -7,6 +7,7 @@ https://ja.vuejs.org/tutorial/
 
 チュートリアルを若干アレンジして実装
 
+npm/voltaなどをインストールしておく
 
 ```shell
 # clone
@@ -18,8 +19,11 @@ $ cd learn-vue3-20260106
 # 依存ライブラリのinstall
 $ npm install
 
-# 実行
+# 実行（実API）
 $ npm run dev
+
+# 実行（Mock Service Worker）
+$ npm run dev:mock
 
 # http://localhost:5173
 # にアクセスする。
