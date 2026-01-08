@@ -12,6 +12,7 @@ import {
   onBeforeUnmount,
   onActivated,
 } from 'vue'
+import type { ComponentInternalInstance } from 'vue' // 追加
 
 const messages = ref<string[]>([])
 let skipNextUpdate = false // 非リアクティブなガード
@@ -23,11 +24,16 @@ const pushMessage = (msg: string) => {
   isLogging = true
   messages.value.push(msg)
   // microtask でフラグをクリア -> 次の更新サイクルでは再び記録可能
-  Promise.resolve().then(() => { isLogging = false })
+  Promise.resolve().then(() => {
+    isLogging = false
+  })
 }
 
-const compName = (inst: any) =>
-  inst?.type?.name ?? inst?.type?.__name ?? inst?.proxy?.$options?.name ?? `uid:${inst?.uid}`
+const compName = (inst: ComponentInternalInstance | null | undefined): string =>
+  inst?.type?.name ??
+  inst?.type?.__name ??
+  inst?.proxy?.$options?.name ??
+  `uid:${inst?.uid}`
 
 onMounted(() => {
   const inst = getCurrentInstance()
@@ -39,7 +45,10 @@ onMounted(() => {
 
 // onBeforeUpdate / onUpdated 内の messages.value.push を pushMessage に置換
 onBeforeUpdate(() => {
-  if (skipNextUpdate) { skipNextUpdate = false; return }
+  if (skipNextUpdate) {
+    skipNextUpdate = false
+    return
+  }
   const inst = getCurrentInstance()
   const name = compName(inst)
   console.log('Component is about to be updated.')
@@ -48,7 +57,10 @@ onBeforeUpdate(() => {
 })
 
 onUpdated(() => {
-  if (skipNextUpdate) { skipNextUpdate = false; return }
+  if (skipNextUpdate) {
+    skipNextUpdate = false
+    return
+  }
   const inst = getCurrentInstance()
   const name = compName(inst)
   console.log(`Component ${name} has been updated.`)

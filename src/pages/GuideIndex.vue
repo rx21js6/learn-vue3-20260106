@@ -7,6 +7,7 @@ import ListRenderingExample from '@/components/guide/list-rendering/ListRenderin
 import ReactivityExample from '@/components/guide/reactivity/ReactivityExample.vue'
 import RefExample from '@/components/guide/ref/RefExample.vue'
 import TemplateSyntaxExample from '@/components/guide/template-syntax/TemplateSyntaxExample.vue'
+import WatchersExample from '@/components/guide/watchers/WatchersExample.vue'
 </script>
 
 <template>
@@ -55,5 +56,10 @@ import TemplateSyntaxExample from '@/components/guide/template-syntax/TemplateSy
   <div>
     <h2>ライフサイクル</h2>
     <LifecycleExample />
+  </div>
+  <hr />
+  <div>
+    <h2>ウォッチャー</h2>
+    <WatchersExample />
   </div>
 </template>
