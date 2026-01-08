@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ConditionalRenderingExample from '@/guide/conditiona-rendering/ConditionalRenderingExample.vue'
-import EventHandlingExample from '@/guide/event-handling/EventHandlingExample.vue'
-import FormBindingExample from '@/guide/form-binding/FormBindingExample.vue'
-import ListRenderingExample from '@/guide/list-rendering/ListRenderingExample.vue'
-import ReactivityExample from '@/guide/reactivity/ReactivityExample.vue'
-import TemplateSyntaxExample from '@/guide/template-syntax/TemplateSyntaxExample.vue'
+import ConditionalRenderingExample from '@/components/guide/conditiona-rendering/ConditionalRenderingExample.vue'
+import EventHandlingExample from '@/components/guide/event-handling/EventHandlingExample.vue'
+import FormBindingExample from '@/components/guide/form-binding/FormBindingExample.vue'
+import ListRenderingExample from '@/components/guide/list-rendering/ListRenderingExample.vue'
+import ReactivityExample from '@/components/guide/reactivity/ReactivityExample.vue'
+import TemplateSyntaxExample from '@/components/guide/template-syntax/TemplateSyntaxExample.vue'
 </script>
 
 <template>
