@@ -1,8 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import TutorialIndex from '@/pages/TutorialIndex.vue'
-import MainMenu from '@/pages/MainMenu.vue'
-import GuideIndex from '@/pages/GuideIndex.vue'
+
 import GoOverIndex from '@/pages/GoOverIndex.vue'
+import GuideIndex from '@/pages/GuideIndex.vue'
+import MainMenu from '@/pages/MainMenu.vue'
+import TutorialIndex from '@/pages/TutorialIndex.vue'
 import ValidationIndex from '@/pages/ValidationIndex.vue'
 
 const router = createRouter({
