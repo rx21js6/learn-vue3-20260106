@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import GetStarted from '@/components/validation/get-started/GetStarted.vue'
-import ZodFieldLevelValidaton from '@/components/validation/zod-field-level-validation/ZodFieldLevelValidaton.vue';
+import ZodFieldLevelValidaton from '@/components/validation/zod-field-level-validation/ZodFieldLevelValidaton.vue'
+import ZodFormLevelValidation from '@/components/validation/zod-form-level-validation/ZodFormLevelValidation.vue'
 </script>
 
 <template>
@@ -19,5 +20,10 @@ import ZodFieldLevelValidaton from '@/components/validation/zod-field-level-vali
   <div>
     <h2>Field Level Validation</h2>
     <ZodFieldLevelValidaton />
+  </div>
+  <hr />
+  <div>
+    <h2>Form Level Validation</h2>
+    <ZodFormLevelValidation />
   </div>
 </template>

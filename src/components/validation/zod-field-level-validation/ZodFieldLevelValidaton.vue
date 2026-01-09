@@ -10,7 +10,10 @@ const fieldSchema1 = toTypedSchema(
 // for Composition API
 const fieldSchema2 = toTypedSchema(
   // z.string().nonempty('Field is required').email('Must be a valid email'),
-  z.string().min(1, { message: 'Field is required' }).email({ message: 'Must be a valid email' })
+  z
+    .string()
+    .min(1, { message: 'Field is required' })
+    .email({ message: 'Must be a valid email' }),
 )
 const { value, errorMessage } = useField('email2', fieldSchema2)
 </script>
