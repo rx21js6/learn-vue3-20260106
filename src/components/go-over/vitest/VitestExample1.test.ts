@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+
 import VitestExample1 from '@/components/go-over/vitest/VitestExample1.vue'
 
 describe('VitestExample1.vue', () => {

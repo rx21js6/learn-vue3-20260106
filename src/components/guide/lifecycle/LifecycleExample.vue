@@ -12,6 +12,7 @@ import {
   onBeforeUnmount,
   onActivated,
 } from 'vue'
+
 import type { ComponentInternalInstance } from 'vue' // 追加
 
 const messages = ref<string[]>([])

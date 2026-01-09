@@ -1,6 +1,8 @@
 import { mount } from '@vue/test-utils'
-import VitestExample2 from '@/components/go-over/vitest/VitestExample2.vue'
 import axios, { type AxiosStatic } from 'axios'
+
+import VitestExample2 from '@/components/go-over/vitest/VitestExample2.vue'
+
 import type { Mocked } from 'vitest'
 
 describe('VitestExample2.vue', () => {

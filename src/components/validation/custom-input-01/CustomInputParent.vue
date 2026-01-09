@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
-import { z } from 'zod'
-import CustomInputInputField from './CustomInputInputField.vue'
 import { toTypedSchema } from '@vee-validate/zod'
+import { useForm } from 'vee-validate'
 import { ref } from 'vue'
+import { z } from 'zod'
+
+import CustomInputInputField from './CustomInputInputField.vue'
 
 const result = ref('')
 
