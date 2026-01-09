@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CustomInputParent from '@/components/validation/custom-input-01/CustomInputParent.vue'
 import GetStarted from '@/components/validation/get-started/GetStarted.vue'
+import ValidationTimingCheck from '@/components/validation/validation-timing/ValidationTimingCheck.vue'
 import ZodFieldLevelValidaton from '@/components/validation/zod-field-level-validation/ZodFieldLevelValidaton.vue'
 import ZodFormLevelValidation from '@/components/validation/zod-form-level-validation/ZodFormLevelValidation.vue'
 </script>
@@ -31,5 +32,10 @@ import ZodFormLevelValidation from '@/components/validation/zod-form-level-valid
   <div>
     <h2>カスタムフィールド</h2>
     <CustomInputParent />
+  </div>
+  <hr />
+  <div>
+    <h2>タイミング調整</h2>
+    <ValidationTimingCheck />
   </div>
 </template>
