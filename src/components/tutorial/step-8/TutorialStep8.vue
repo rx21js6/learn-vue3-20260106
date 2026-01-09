@@ -42,7 +42,7 @@ function removeTodo(todo: { id: number; text: string; done: boolean }) {
   </button>
 </template>
 
-<style>
+<style scoped>
 .done {
   text-decoration: line-through;
 }
