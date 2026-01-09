@@ -28,9 +28,9 @@ const buttonDisabled = computed(() => {
     <h2>公式はyupだがzodで試してみた</h2>
   </div>
   <h3>email</h3>
-  <input v-model="email" v-bind="emailAttrs" type="text" />
+  <input id="email" v-model="email" v-bind="emailAttrs" type="text" />
   <h3>age</h3>
-  <input v-model="age" v-bind="ageAttrs" type="number" />
+  <input id="age" v-model="age" v-bind="ageAttrs" type="number" />
 
   <p>values: {{ values }}</p>
   <p>errors: {{ errors }}</p>

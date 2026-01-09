@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import GetStarted from '@/components/validation/get-started/GetStarted.vue'
+import ZodFieldLevelValidaton from '@/components/validation/zod-field-level-validation/ZodFieldLevelValidaton.vue';
 </script>
 
 <template>
@@ -13,5 +14,10 @@ import GetStarted from '@/components/validation/get-started/GetStarted.vue'
   <div>
     <h2>リアクティビティ</h2>
     <GetStarted />
+  </div>
+  <hr />
+  <div>
+    <h2>Field Level Validation</h2>
+    <ZodFieldLevelValidaton />
   </div>
 </template>
