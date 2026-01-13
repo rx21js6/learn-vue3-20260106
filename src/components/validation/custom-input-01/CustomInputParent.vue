@@ -8,7 +8,7 @@ import CustomInputInputField from './CustomInputInputField.vue'
 
 const result = ref('')
 
-const { handleSubmit } = useForm({
+const { resetForm, handleSubmit } = useForm({
   validationSchema: toTypedSchema(
     z
       .object({
@@ -41,7 +41,7 @@ const onSubmit = handleSubmit((values) => {
 })
 
 const onClearClick = () => {
-  //
+  resetForm()
 }
 </script>
 <template>
