@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ConditionalRenderingExample from '@/components/guide/conditiona-rendering/ConditionalRenderingExample.vue'
+import ConditionalRenderingExample from '@/components/guide/conditional-rendering/ConditionalRenderingExample.vue'
 import EventHandlingExample from '@/components/guide/event-handling/EventHandlingExample.vue'
 import FormBindingExample from '@/components/guide/form-binding/FormBindingExample.vue'
 import LifecycleExample from '@/components/guide/lifecycle/LifecycleExample.vue'
@@ -39,7 +39,7 @@ import WatchersExample from '@/components/guide/watchers/WatchersExample.vue'
   </div>
   <hr />
   <div>
-    <h2>条件付きレンダリング</h2>
+    <h2>条件付きレンダリング（conditiona-rendering）</h2>
     <ConditionalRenderingExample />
   </div>
   <hr />
