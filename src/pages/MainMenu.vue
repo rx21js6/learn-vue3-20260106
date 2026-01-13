@@ -14,6 +14,9 @@
       <li>
         <RouterLink to="/validation">Go to validation Index</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/application">Go to application Index</RouterLink>
+      </li>
     </ul>
   </div>
 </template>
