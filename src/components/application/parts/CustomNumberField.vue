@@ -20,9 +20,13 @@ const props = defineProps({
   },
 })
 
-const { value, errorMessage } = useField(() => props.name, undefined, {
-  validateOnValueUpdate: false,
-})
+const { value, errorMessage, handleBlur, handleChange, validate } = useField(
+  () => props.name,
+  undefined,
+  {
+    validateOnValueUpdate: false,
+  },
+)
 </script>
 <template>
   <div class="frame">
@@ -36,6 +40,15 @@ const { value, errorMessage } = useField(() => props.name, undefined, {
         type="number"
         :min="min ?? 0"
         :max="max ?? 9999999"
+        @input="
+          (e) => handleChange((e.target as HTMLInputElement).value, false)
+        "
+        @blur="
+          () => {
+            handleBlur()
+            void validate()
+          }
+        "
       />
     </div>
     <div class="error-message">
