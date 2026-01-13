@@ -29,12 +29,12 @@ import WatchersExample from '@/components/guide/watchers/WatchersExample.vue'
   </div>
   <hr />
   <div>
-    <h2>イベントハンドリング</h2>
+    <h2>イベントハンドリング（event-handling）</h2>
     <EventHandlingExample />
   </div>
   <hr />
   <div>
-    <h2>フォーム入力バインディング</h2>
+    <h2>フォーム入力バインディング（form-binding）</h2>
     <FormBindingExample />
   </div>
   <hr />
