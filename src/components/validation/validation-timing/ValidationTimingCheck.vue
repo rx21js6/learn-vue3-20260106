@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod'
 import { useField, useForm } from 'vee-validate'
+import { computed } from 'vue'
 import { z } from 'zod'
 
 const schema = toTypedSchema(
@@ -37,11 +38,30 @@ const { value: passwordConfirm } = useField('passwordConfirm', undefined, {
 const onClearClick = () => {
   resetForm()
 }
+
+// もっと良いやり方はない？
+const hasError = computed(() => {
+  if (!values.password || !values.passwordConfirm) {
+    // 未入力
+    return true
+  } else if (
+    errors.value.email ||
+    errors.value.password ||
+    errors.value.passwordConfirm
+  ) {
+    // 入力エラーあり
+    return true
+  }
+  return false
+})
 </script>
 <template>
   <div>
     <h3>バリデーションのタイミング</h3>
-    <p>blurで判定</p>
+    <p>
+      useFieldで validateOnValueUpdate: false
+      と定義することで、入力時にチェックを実施せず、blurで判定する。
+    </p>
   </div>
   <div>
     <label for="validation-timing-email">メールアドレス（任意）</label>
@@ -77,6 +97,7 @@ const onClearClick = () => {
     <span> {{ errors.passwordConfirm }}</span>
   </div>
   <button @click="onClearClick">クリア</button>
+  <button :disabled="hasError">エラーがある場合は非活性</button>
   <div>
     <span>{{ values }}</span>
   </div>
