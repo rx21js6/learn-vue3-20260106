@@ -25,6 +25,7 @@ function removeTodo(todo: { id: number }) {
 </script>
 
 <template>
+  <div><p>@submit.preventでactionイベントを抑止</p></div>
   <form @submit.prevent="addTodo">
     <input v-model="newTodo" required placeholder="new todo" />
     <button>Add Todo</button>

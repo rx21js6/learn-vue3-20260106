@@ -13,10 +13,24 @@ type InputRecParam = {
   quantity: number
 }
 
+// 初期設定値
+const initialValues = {
+  familyName: '',
+  firstName: '',
+  // email: '',
+  age: undefined,
+  // password: '',
+  // passwordConfirm: '',
+  lines: [
+    { itemName: '', unitPrice: 0, quantity: 0 } as InputRecParam,
+    { itemName: '', unitPrice: 0, quantity: 0 } as InputRecParam,
+  ],
+}
+
 const lineSchema = z.object({
   itemName: z.string().min(1, '品目名は必須です'),
-  unitPrice: z.coerce.number().min(1),
-  quantity: z.coerce.number().min(1),
+  unitPrice: z.coerce.number().min(1, '単価は1以上を入力してください'),
+  quantity: z.coerce.number().min(1, '数量は1以上を入力してください'),
 })
 
 const { values, errors, handleSubmit } = useForm({
@@ -25,38 +39,27 @@ const { values, errors, handleSubmit } = useForm({
       .object({
         firstName: z.string().nonempty({ message: '名は必須です' }),
         familyName: z.string().nonempty({ message: '姓は必須です' }),
-        email: z.string().nonempty().email(),
+        // email: z.string().nonempty().email(),
         age: z.coerce
-          .number({ message: '数字を入力してください' })
+          .number({ message: '年齢を入力してください' })
           .min(18, { message: '18歳未満は使用できません' }),
-        password: z.string().nonempty().min(8),
-        passwordConfirm: z.string().nonempty().min(8),
+        // password: z.string().nonempty().min(8),
+        // passwordConfirm: z.string().nonempty().min(8),
         lines: z.array(lineSchema),
       })
       .refine(
-        (data) => {
-          // Zodでの相関チェックはrefine（あるいはsuperRefine）を使用する
-          // returnを忘れないこと（trueで「正常判定」）
-          return data.password === data.passwordConfirm
+        () => {
+          // // Zodでの相関チェックはrefine（あるいはsuperRefine）を使用する
+          // // returnを忘れないこと（trueで「正常判定」）
+          // return data.password === data.passwordConfirm
         },
         {
-          message: 'Passwords do not match',
-          path: ['passwordConfirm'],
+          // message: 'Passwords do not match',
+          // path: ['passwordConfirm'],
         },
       ),
   ),
-  initialValues: {
-    familyName: '',
-    firstName: '',
-    email: '',
-    age: undefined,
-    password: '',
-    passwordConfirm: '',
-    lines: [
-      { itemName: '', unitPrice: 0, quantity: 0 } as InputRecParam,
-      { itemName: '', unitPrice: 0, quantity: 0 } as InputRecParam,
-    ],
-  },
+  initialValues,
 })
 
 const calcLineAmount = (line: InputRecParam): number => {
@@ -71,6 +74,7 @@ const totalAmount = computed(() => {
 })
 
 const onSubmit = handleSubmit((values) => {
+  console.log('onSubmit')
   alert(JSON.stringify(values, null, 2))
   // result.value = JSON.stringify(values, null, 2)
 })
@@ -85,7 +89,7 @@ const onSubmit = handleSubmit((values) => {
     <div>errors</div>
     <span>{{ errors }}</span>
   </div>
-  <form @submit="onSubmit">
+  <form @submit.prevent="onSubmit">
     <div>
       <h2>基本情報</h2>
       <CustomTextField
@@ -143,7 +147,7 @@ const onSubmit = handleSubmit((values) => {
     </div>
     <div class="total">合計金額：{{ totalAmount.toLocaleString() }} 円</div>
     <div>
-      <button @submit="onSubmit">実行</button>
+      <button>実行</button>
     </div>
   </form>
 </template>

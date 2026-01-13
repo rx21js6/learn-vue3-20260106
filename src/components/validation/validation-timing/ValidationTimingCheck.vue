@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/zod'
 import { useField, useForm } from 'vee-validate'
+import { computed } from 'vue'
 import { z } from 'zod'
 
 const schema = toTypedSchema(
@@ -20,8 +21,13 @@ const schema = toTypedSchema(
       path: ['passwordConfirm'],
     }),
 )
-const { values, errors, validateField, resetForm } = useForm({
+const { values, errors, meta, validateField, resetForm } = useForm({
   validationSchema: schema,
+  initialValues: {
+    email: '',
+    password: '',
+    passwordConfirm: '',
+  },
 })
 
 const { value: email } = useField('email', undefined, {
@@ -37,11 +43,18 @@ const { value: passwordConfirm } = useField('passwordConfirm', undefined, {
 const onClearClick = () => {
   resetForm()
 }
+
+// 未入力orエラーがあるかの判定
+const hasError = computed(() => !meta.value.valid)
 </script>
 <template>
   <div>
     <h3>バリデーションのタイミング</h3>
-    <p>blurで判定</p>
+    <p>
+      useFieldで validateOnValueUpdate: false
+      と定義することで、入力時にチェックを実施せず、blurで判定する。
+    </p>
+    <p>initialValuesで初期値を設定可能</p>
   </div>
   <div>
     <label for="validation-timing-email">メールアドレス（任意）</label>
@@ -77,6 +90,8 @@ const onClearClick = () => {
     <span> {{ errors.passwordConfirm }}</span>
   </div>
   <button @click="onClearClick">クリア</button>
+  <p>meta.valus.valid で、未入力／入力エラーを同時に判定可能</p>
+  <button :disabled="hasError">エラーがある場合は非活性</button>
   <div>
     <span>{{ values }}</span>
   </div>

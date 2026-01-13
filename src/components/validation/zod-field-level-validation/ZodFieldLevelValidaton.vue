@@ -23,6 +23,7 @@ const { value, errorMessage } = useField('email2', fieldSchema2)
   </div>
   <div>
     <h4>Field/ErrorMessageコンポーネントを使用</h4>
+    <p>blurで判定されている</p>
     <Form>
       <Field name="email1" type="email" :rules="fieldSchema1" />
       <ErrorMessage name="email1" />
@@ -30,6 +31,7 @@ const { value, errorMessage } = useField('email2', fieldSchema2)
   </div>
   <div>
     <h4>useFieldを使用</h4>
+    <p>入力時に判定されている</p>
     <input name="email2" v-model="value" type="email" />
     <span>{{ errorMessage }}</span>
   </div>

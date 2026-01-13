@@ -6,12 +6,12 @@ type WatchObject = {
   y: number
 }
 
-const value = ref(0)
+const primitivValuee = ref(0)
 const obj = ref<WatchObject>({ x: 0, y: 0 })
 const obj2 = ref<WatchObject>({ x: 0, y: 0 })
 
-watch(value, (newVal, oldVal) => {
-  console.log(`value changed from ${oldVal} to ${newVal}`)
+watch(primitivValuee, (newVal, oldVal) => {
+  console.log(`primitivValuee changed from ${oldVal} to ${newVal}`)
 })
 
 watch(
@@ -33,13 +33,18 @@ watch(
 </script>
 
 <template>
+  <p>watchで監視</p>
   <div>
     <h3>プリミティブ</h3>
     <label for="primitiveField">値: </label>
-    <input id="primitiveField" v-model="value" type="number" />
+    <input id="primitiveField" v-model="primitivValuee" type="number" />
   </div>
   <div>
     <h3>オブジェクト</h3>
+    <p>
+      オブジェクトそのものを監視対象とする場合は{ deep: true}
+      を設定する必要がある。
+    </p>
     <label for="objectField">値: </label>
     X: <input id="objectFieldX" v-model="obj.x" type="number" /> Y:
     <input id="objectFieldY" v-model="obj.y" type="number" />

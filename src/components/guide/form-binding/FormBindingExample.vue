@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const message = ref('Hello!\nThis is a multiline\ntext area example.')
 
-const selectedCheckboxParams = ref<string[]>([])
+const selectedCheckboxParams = ref<string[]>(['Check 2 value'])
 
 const options = ref([
   { text: 'One', value: 'A' },
@@ -11,7 +11,7 @@ const options = ref([
   { text: 'Three', value: 'C' },
 ])
 
-const selectedOptions = ref<string[]>([])
+const selectedOptions = ref<string[]>(['C'])
 
 const amount = ref(0)
 const trimText = ref('')
@@ -31,42 +31,44 @@ const trimText = ref('')
       <p class="p1">{{ message }}</p>
     </div>
     <div>
-      <span>改行あり</span>
+      <span>改行あり（white-space: pre-wrap）</span>
       <p class="p2">{{ message }}</p>
     </div>
   </div>
 
   <div>
     <h3>複数チェックボックス</h3>
+    <p>v-modelが配列、各inputのv-modelを統一</p>
     <input
       type="checkbox"
       id="check01"
-      value="Option 1"
+      value="Check 1 value"
       v-model="selectedCheckboxParams"
     />
-    <label for="check01">Option 1</label>
+    <label for="check01">Check 1</label>
     <br />
     <input
       type="checkbox"
       id="check02"
-      value="Option 2"
+      value="Check 2 value"
       v-model="selectedCheckboxParams"
     />
-    <label for="check02">Option 2</label>
+    <label for="check02">Check 2</label>
     <br />
     <input
       type="checkbox"
       id="check03"
-      value="Option 3"
+      value="Check 3 value"
       v-model="selectedCheckboxParams"
     />
-    <label for="check03">Option 3</label>
+    <label for="check03">Check 3</label>
     <br />
     <span>Selected options: {{ selectedCheckboxParams.join(', ') }}</span>
   </div>
 
   <div>
     <h3>複数セレクト</h3>
+    <p>v-modelが配列、各inputのv-modelを統一</p>
     <select v-model="selectedOptions" multiple>
       <option disabled value="">Please select</option>
       <option
@@ -84,12 +86,17 @@ const trimText = ref('')
 
   <div>
     <h3>number修飾子</h3>
+    <p>css: text-align: right; で右よせ</p>
     <label for="amount">金額</label>
     <input
       id="amount"
+      class="amount"
+      type="number"
       inputmode="numeric"
       pattern="\d*"
       v-model.number="amount"
+      miin="0"
+      max="999999"
     />
     <div>
       <p>入力した値: {{ amount.toLocaleString() }}円</p>
@@ -117,5 +124,8 @@ const trimText = ref('')
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
+}
+.amount {
+  text-align: right;
 }
 </style>

@@ -45,12 +45,14 @@ const onClearClick = () => {
 }
 </script>
 <template>
+  <p>prop.nameにフィールド名を設定</p>
   <form @submit="onSubmit">
     <CustomInputInputField id="custom-input-first-name" name="firstName" />
     <CustomInputInputField id="custom-input-last-name" name="lastName" />
     <CustomInputInputField id="custom-input-email" name="email" type="email" />
     <CustomInputInputField id="custom-input-age" name="age" type="number" />
 
+    <p>パスワードは相関チェックを実施</p>
     <CustomInputInputField
       id="custom-input-password"
       name="password"

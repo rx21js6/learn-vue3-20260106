@@ -11,33 +11,44 @@ const area = ref('130000')
 const jmaResponse = ref('')
 const todoId = ref(1)
 const typicodeResponse = ref('')
+const loading = ref(false)
 
-const onJmaButtonClick = () => {
-  console.log('Button clicked!')
-  const url = `https://www.jma.go.jp/bosai/forecast/data/forecast/${area.value}.json`
-  axios
-    .get(url)
-    .then((response) => {
-      console.log('Response from mocked API:', response.data)
-      jmaResponse.value = JSON.stringify(response.data, null, 2)
-    })
-    .catch((error) => {
-      console.error('Error fetching from mocked API:', error)
-    })
+const onJmaButtonClick = async () => {
+  loading.value = true
+  await setTimeout(() => {
+    console.log('Button clicked!')
+    const url = `https://www.jma.go.jp/bosai/forecast/data/forecast/${area.value}.json`
+    axios
+      .get(url)
+      .then((response) => {
+        console.log('Response from mocked API:', response.data)
+        jmaResponse.value = JSON.stringify(response.data, null, 2)
+      })
+      .catch((error) => {
+        console.error('Error fetching from mocked API:', error)
+      })
+
+    loading.value = false
+  }, 1000)
 }
 
-const onTypicodeButtonClick = () => {
-  console.log('Button clicked!')
-  const url = `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
-  axios
-    .get(url)
-    .then((response) => {
-      console.log('Response from mocked API:', response.data)
-      typicodeResponse.value = JSON.stringify(response.data, null, 2)
-    })
-    .catch((error) => {
-      console.error('Error fetching from mocked API:', error)
-    })
+const onTypicodeButtonClick = async () => {
+  loading.value = true
+  await setTimeout(() => {
+    console.log('Button clicked!')
+    const url = `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+    axios
+      .get(url)
+      .then((response) => {
+        console.log('Response from mocked API:', response.data)
+        typicodeResponse.value = JSON.stringify(response.data, null, 2)
+      })
+      .catch((error) => {
+        console.error('Error fetching from mocked API:', error)
+      })
+
+    loading.value = false
+  }, 1000)
 }
 
 const clear = () => {
@@ -66,7 +77,9 @@ onMounted(() => {
       <option value="130000">東京地方</option>
       <option value="016000">石狩空知後志地方</option>
     </select>
-    <button @click="onJmaButtonClick">APIへリクエストを送信</button>
+    <button @click="onJmaButtonClick" :disabled="loading">
+      {{ loading ? '通信中' : 'APIへリクエストを送信' }}
+    </button>
     <div v-if="jmaResponse">
       <h4>レスポンス:</h4>
       <pre>{{ jmaResponse }}</pre>
@@ -78,7 +91,9 @@ onMounted(() => {
   <div>
     <h4>Typicode</h4>
     ID: <input v-model="todoId" type="number" min="1" max="200" />
-    <button @click="onTypicodeButtonClick">APIへリクエストを送信</button>
+    <button @click="onTypicodeButtonClick" :disabled="loading">
+      {{ loading ? '通信中' : 'APIへリクエストを送信' }}
+    </button>
     <div v-if="typicodeResponse">
       <h4>レスポンス:</h4>
       <pre>{{ typicodeResponse }}</pre>

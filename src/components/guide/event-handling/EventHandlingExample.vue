@@ -9,6 +9,10 @@ const greet = (event: PointerEvent) => {
   tagName.value = `${String(event)} / ${String(event.type)} / ${String((event.target as HTMLElement).tagName)}`
 }
 
+const clear = () => {
+  tagName.value = ''
+}
+
 const showAlert = (message: string) => {
   window.alert(message)
 }
@@ -26,24 +30,26 @@ const mouseEventMessage = ref('')
   <div>
     <h3>シンプル</h3>
     <button @click="count++">Add 1</button>
+    <button @click="count = 0">reset</button>
     <p>Count is: {{ count }}</p>
   </div>
 
   <div>
     <h3>メソッドハンドラー</h3>
     <button @click="greet">greet</button>
+    <button @click="clear">clear</button>
     <p>{{ tagName }}</p>
   </div>
 
   <div>
     <h3>イベント修飾子</h3>
-    <h4>stopあり</h4>
+    <h4>stopあり（@click.stop）</h4>
     <div
       @click="showAlert('親がクリックされました！')"
       style="margin-top: 10px; padding: 10px; border: 1px solid black"
     >
       親要素
-      <button @click.stop="showAlert('Clicked!')">
+      <button @click.stop="showAlert('子がクリックされました!')">
         クリックしても親に伝播しない
       </button>
     </div>
@@ -53,7 +59,7 @@ const mouseEventMessage = ref('')
       style="margin-top: 10px; padding: 10px; border: 1px solid black"
     >
       親要素
-      <button @click="showAlert('Clicked!')">
+      <button @click="showAlert('子がクリックされました!')">
         クリックしたらで親にも伝播する
       </button>
     </div>

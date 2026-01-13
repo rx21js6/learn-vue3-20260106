@@ -12,5 +12,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <p ref="pElementRef">Hello</p>
+  <p ref="pElementRef">Not Mounted</p>
 </template>

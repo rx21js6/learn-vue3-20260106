@@ -15,27 +15,27 @@ import ZodFormLevelValidation from '@/components/validation/zod-form-level-valid
   </div>
   <hr />
   <div>
-    <h2>リアクティビティ</h2>
+    <h2>リアクティビティ（get-started）</h2>
     <GetStarted />
   </div>
   <hr />
   <div>
-    <h2>Field Level Validation</h2>
+    <h2>Field Level Validation（zod-field-level-validation）</h2>
     <ZodFieldLevelValidaton />
   </div>
   <hr />
   <div>
-    <h2>Form Level Validation</h2>
+    <h2>Form Level Validation（zod-form-level-validation）</h2>
     <ZodFormLevelValidation />
   </div>
   <hr />
   <div>
-    <h2>カスタムフィールド</h2>
+    <h2>カスタムフィールド（custom-input-01）</h2>
     <CustomInputParent />
   </div>
   <hr />
   <div>
-    <h2>タイミング調整</h2>
+    <h2>タイミング調整（validation-timing）</h2>
     <ValidationTimingCheck />
   </div>
 </template>
