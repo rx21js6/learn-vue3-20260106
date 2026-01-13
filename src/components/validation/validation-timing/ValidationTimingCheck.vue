@@ -21,8 +21,13 @@ const schema = toTypedSchema(
       path: ['passwordConfirm'],
     }),
 )
-const { values, errors, validateField, resetForm } = useForm({
+const { values, errors, meta, validateField, resetForm } = useForm({
   validationSchema: schema,
+  initialValues: {
+    email: '',
+    password: '',
+    passwordConfirm: '',
+  },
 })
 
 const { value: email } = useField('email', undefined, {
@@ -39,21 +44,8 @@ const onClearClick = () => {
   resetForm()
 }
 
-// もっと良いやり方はない？
-const hasError = computed(() => {
-  if (!values.password || !values.passwordConfirm) {
-    // 未入力
-    return true
-  } else if (
-    errors.value.email ||
-    errors.value.password ||
-    errors.value.passwordConfirm
-  ) {
-    // 入力エラーあり
-    return true
-  }
-  return false
-})
+// 未入力orエラーがあるかの判定
+const hasError = computed(() => !meta.value.valid)
 </script>
 <template>
   <div>
@@ -62,6 +54,7 @@ const hasError = computed(() => {
       useFieldで validateOnValueUpdate: false
       と定義することで、入力時にチェックを実施せず、blurで判定する。
     </p>
+    <p>initialValuesで初期値を設定可能</p>
   </div>
   <div>
     <label for="validation-timing-email">メールアドレス（任意）</label>
@@ -97,6 +90,7 @@ const hasError = computed(() => {
     <span> {{ errors.passwordConfirm }}</span>
   </div>
   <button @click="onClearClick">クリア</button>
+  <p>meta.valus.valid で、未入力／入力エラーを同時に判定可能</p>
   <button :disabled="hasError">エラーがある場合は非活性</button>
   <div>
     <span>{{ values }}</span>
