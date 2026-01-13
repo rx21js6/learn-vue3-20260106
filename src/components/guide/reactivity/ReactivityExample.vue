@@ -13,13 +13,13 @@ const objectReactive = reactive<RefExampleProps>({ count: 0 })
 const incrementRef = () => {
   // Note: .value is needed for ref objects
   objectRef.value.count++
-  objectRef.value.message = `Updated!: ${objectRef.value.count}`
+  objectRef.value.message = `objectRef Updated!: ${objectRef.value.count}`
 }
 
 const incrementReactive = () => {
   // Note: No .value needed for reactive objects
   objectReactive.count++
-  objectReactive.message = `Updated!: ${objectReactive.count}`
+  objectReactive.message = `objectReactive Updated!: ${objectReactive.count}`
 }
 </script>
 <template>
@@ -31,12 +31,14 @@ const incrementReactive = () => {
 
   <div>
     <h3>オブジェクトref</h3>
+    <div>オブジェクト: {{ objectRef }}</div>
     <div>値: {{ objectRef.count }}</div>
     <button @click="incrementRef">インクリメント</button>
   </div>
 
   <div>
     <h3>オブジェクトreactive</h3>
+    <div>オブジェクト: {{ objectReactive }}</div>
     <div>値: {{ objectReactive.count }}</div>
     <button @click="incrementReactive">インクリメント</button>
   </div>

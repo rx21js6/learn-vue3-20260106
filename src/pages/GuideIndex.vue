@@ -19,12 +19,12 @@ import WatchersExample from '@/components/guide/watchers/WatchersExample.vue'
   </div>
   <hr />
   <div>
-    <h2>リアクティビティ</h2>
+    <h2>リアクティビティ（reactivity）</h2>
     <ReactivityExample />
   </div>
   <hr />
   <div>
-    <h2>テンプレート構文</h2>
+    <h2>テンプレート構文（template-syntax）</h2>
     <TemplateSyntaxExample />
   </div>
   <hr />
