@@ -10,6 +10,7 @@ onMounted(() => {
 <template>
   <div>
     <h3>TemplateRef</h3>
+    <p>画面表示時↓にフォーカスが当たるはず</p>
     <input ref="input" />
   </div>
 </template>

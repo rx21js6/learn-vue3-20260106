@@ -44,22 +44,22 @@ import WatchersExample from '@/components/guide/watchers/WatchersExample.vue'
   </div>
   <hr />
   <div>
-    <h2>リストレンダリング</h2>
+    <h2>リストレンダリング（list-rendering）</h2>
     <ListRenderingExample />
   </div>
   <hr />
   <div>
-    <h2>ref</h2>
+    <h2>ref（TemplateRef）（ref）</h2>
     <RefExample />
   </div>
   <hr />
   <div>
-    <h2>ライフサイクル</h2>
+    <h2>ライフサイクル（lifecycle）</h2>
     <LifecycleExample />
   </div>
   <hr />
   <div>
-    <h2>ウォッチャー</h2>
+    <h2>ウォッチャー（watchers）</h2>
     <WatchersExample />
   </div>
 </template>
