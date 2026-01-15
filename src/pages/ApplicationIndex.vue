@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import SamplePage1 from '@/components/application/pages/SamplePage1.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
@@ -11,7 +9,9 @@ import SamplePage1 from '@/components/application/pages/SamplePage1.vue'
   </div>
   <hr />
   <div>
-    <h2>応用例1</h2>
-    <SamplePage1 />
+    <ul>
+      <li><RouterLink to="/application/samplePage1">サンプル１</RouterLink></li>
+      <li><RouterLink to="/application/samplePage2">サンプル２</RouterLink></li>
+    </ul>
   </div>
 </template>
