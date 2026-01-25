@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
+import SamplePage1 from '@/components/application/pages/SamplePage1.vue'
+import SamplePage2 from '@/components/application/pages/SamplePage2.vue'
 import ApplicationIndex from '@/pages/ApplicationIndex.vue'
 import GoOverIndex from '@/pages/GoOverIndex.vue'
 import GuideIndex from '@/pages/GuideIndex.vue'
@@ -16,6 +18,8 @@ const router = createRouter({
     { path: '/goOver', component: GoOverIndex },
     { path: '/validation', component: ValidationIndex },
     { path: '/application', component: ApplicationIndex },
+    { path: '/application/samplePage1', component: SamplePage1 },
+    { path: '/application/samplePage2', component: SamplePage2 },
   ],
 })
 export default router

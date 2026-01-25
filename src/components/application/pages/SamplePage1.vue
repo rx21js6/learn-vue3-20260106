@@ -4,8 +4,8 @@ import { useForm } from 'vee-validate'
 import { computed } from 'vue'
 import { z } from 'zod'
 
-import CustomNumberField from '../parts/CustomNumberField.vue'
-import CustomTextField from '../parts/CustomTextField.vue'
+import CustomNumberField from '@/components/application/parts/page1/CustomNumberField.vue'
+import CustomTextField from '@/components/application/parts/page1/CustomTextField.vue'
 
 type InputRecParam = {
   itemName: string
@@ -80,7 +80,13 @@ const onSubmit = handleSubmit((values) => {
 })
 </script>
 <template>
-  <div><h1>サンプルページ</h1></div>
+  <div>
+    <RouterLink to="/">メニュー</RouterLink>
+  </div>
+  <div>
+    <RouterLink to="/application">応用トップ</RouterLink>
+  </div>
+  <div><h1>サンプルページ１</h1></div>
   <div>
     <div>values</div>
     <span>{{ values }}</span>
